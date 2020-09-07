@@ -1,8 +1,8 @@
 let dice = [0, 0, 0, 0, 0];
 let throws = 0;
-dice = [2,2,3,1,4];
+dice = [2,2,4,3,4];
 console.log(dice);
-console.log(twoPairs());
+console.log(fullHouse());
 
 function roll() {
   let test = [0, 0, 0, 0, 0];
@@ -84,7 +84,24 @@ function twoPairs() {
 function threeSame() {}
 
 function fourSame(params) {}
-function fullHouse(params) {}
+//Returns the value of full house
+function fullHouse(params) {
+    let frequence = frequency();
+    let pairOne = 0, setOfThree = 0;
+    for (let i = 0; i < frequence.length; i++) {
+        const element = frequence[i];
+        if(element == 2) {
+            if(pairOne == 0) {
+                pairOne = 2 * (i+1);
+            }
+        } if (element == 3) {
+            setOfThree = 3 * (i+1);
+        }
+    }
+    if( pairOne != 0 && setOfThree != 0) {
+        return (pairOne+setOfThree);
+    } else return null;
+}
 function small(params) {}
 function large(params) {}
 function chance(params) {}
