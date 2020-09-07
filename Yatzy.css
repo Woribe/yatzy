@@ -7,6 +7,9 @@ div#game {
   text-align: left;
   grid-auto-flow: row;
   background-color: burlywood;
+
+  border-collapse: collapse;
+  border: 10px solid black;
 }
 
 div#result {
@@ -23,16 +26,25 @@ div#result {
 div#diverse {
   display: grid;
   grid-row-gap: 1px;
-  grid-template-columns: auto;
-
+  grid-template-columns: auto auto;
+  grid-template-rows: 27% auto 55%;
   padding: 10px;
   color: #2196f3;
   font-size: 25px;
   text-align: left;
+  border-collapse: collapse;
+  border: 10px solid black;
 }
-div.bonus {
+div#sum {
   grid-row-start: 2;
 }
+div#bonus {
+  grid-row-start: 2;
+}
+div#total {
+  grid-row-start: 4;
+}
+
 /*
 Dice
 */
