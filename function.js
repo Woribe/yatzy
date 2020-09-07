@@ -1,13 +1,18 @@
 let dice = [0, 0, 0, 0, 0];
 let throws = 0;
 
-function roll(dice) {
-  for (let index = 0; index < dice; index++) {
-    dice.index = Math.ceil(Math.random() * 6);
+function roll() {
+  let test = [0, 0, 0, 0, 0];
+
+  for (let index = 0; index < test.length; index++) {
+    test[index] = Math.ceil(Math.random() * 6);
   }
 
+  Math.ceil(Math.random() * 6);
+  dice = test;
   return dice;
 }
+console.log(roll());
 
 function resetThrow() {
   return -1;
