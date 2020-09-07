@@ -1,6 +1,11 @@
 let dice = [0, 0, 0, 0, 0];
 let throws = 0;
 
+roll();
+console.log(dice);
+console.log(frequency());
+console.log(sameValuePoints(4));
+
 function roll() {
   let test = [0, 0, 0, 0, 0];
 
@@ -12,7 +17,6 @@ function roll() {
   dice = test;
   return dice;
 }
-console.log(roll());
 
 function resetThrow() {
   return -1;
@@ -42,10 +46,18 @@ function frequency() {
     return numbers;
 }
 
-function sameValuePoints(value) {}
+
+// Caluculate the value of specific number in the diceset.
+function sameValuePoints(value) {
+    let frequence = frequency();
+    let valueOfNumber = frequence[value-1] * value;
+    return valueOfNumber;
+}
 
 function onePair() {}
-function twoPairs() {}
+function twoPairs() {
+    
+}
 function threeSame() {}
 
 function fourSame(params) {}
