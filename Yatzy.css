@@ -54,6 +54,9 @@ div#dice {
   grid-template-columns: 40pt auto auto auto 40pt;
   grid-template-rows: 40pt auto 40pt auto 40pt;
   background-color: #2196f3;
+  grid-row-gap: 5pt;
+  border-collapse: collapse;
+  border: 1px solid #000000;
 }
 
 div#diceArea {
@@ -66,6 +69,9 @@ div#diceArea {
   grid-template-columns: 5pt auto auto auto auto auto 5pt;
   grid-template-rows: auto;
   background-color: burlywood;
+
+  border-collapse: collapse;
+  border: 1px solid #000000;
 }
 
 .dice {
