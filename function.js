@@ -15,7 +15,27 @@ function resetThrow() {
 
 // Beregninger
 //frequency regner hvor mange af hver der er...
-function frequency() {}
+function frequency() {
+    let numbers = [0,0,0,0,0,0];
+    for (const number of dice) {
+        if(number == 1) {
+            numbers[0]++;
+        } else if(number == 2) {
+            numbers[1]++;
+        } else if(number == 3) {
+            numbers[2]++;
+        } else if(number == 4) {
+            numbers[3]++;
+        } else if(number == 5) {
+            numbers[4]++;
+        } else if(number == 6) {
+            numbers[5]++;
+        } else {
+            console.log("Diceset contained a number out of bound");
+        }
+    }
+    return numbers;
+}
 
 function sameValuePoints(value) {}
 
