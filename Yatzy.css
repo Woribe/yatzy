@@ -39,8 +39,8 @@ Dice
 div#dice {
   display: grid;
   grid-template-columns: 40pt auto auto auto 40pt;
-  grid-template-rows:  40pt auto 40pt auto 40pt ;
-  background-color: #2196F3;
+  grid-template-rows: 40pt auto 40pt auto 40pt;
+  background-color: #2196f3;
 }
 
 div#diceArea {
@@ -51,11 +51,11 @@ div#diceArea {
 
   display: grid;
   grid-template-columns: 5pt auto auto auto auto auto 5pt;
-  grid-template-rows:  auto;
+  grid-template-rows: auto;
   background-color: burlywood;
 }
 
-.dice{
+.dice {
   font-size: 50pt;
   text-align: center;
 }
@@ -63,7 +63,6 @@ div#diceArea {
 #turnIndicator {
   text-align: start;
   top: 50%;
-  
 }
 
 #dice1 {
@@ -71,7 +70,6 @@ div#diceArea {
   grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 3;
-
 }
 
 #dice2 {
