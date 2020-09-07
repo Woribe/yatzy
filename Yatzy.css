@@ -1,15 +1,25 @@
 div#game {
   display: grid;
-  grid-row-gap: 50px;
-  grid-template-columns: auto auto auto;
+  grid-row-gap: 1px;
+  grid-template-columns: auto auto auto auto;
   padding: 10px;
 }
-div.grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
+
+div.grid-itemA {
+  padding: 10px;
+  font-size: 25px;
+  text-align: left;
+  grid-column-start: 1;
+  grid-column-end: span col4-start;
+  grid-row-end: span 2;
+}
+div.grid-itemB {
+  padding: 10px;
+  font-size: 25px;
+  text-align: left;
+  grid-column-start: 1;
+  grid-column-end: span col4-start;
+  grid-row-end: span 2;
 }
 
 div#dice {
