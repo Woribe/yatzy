@@ -12,4 +12,6 @@ div.grid-item {
   text-align: center;
 }
 
-div#Dice
+div#dice {
+  display: grid;
+}
