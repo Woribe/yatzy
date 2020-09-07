@@ -1,8 +1,12 @@
-let dice = document.querySelectorAll(dice);
+let dice = [0, 0, 0, 0, 0];
 let throws = 0;
 
-function throws() {
-  return -1;
+function roll(dice) {
+  for (let index = 0; index < dice; index++) {
+    dice.index = Math.ceil(Math.random() * 6);
+  }
+
+  return dice;
 }
 
 function resetThrow() {
