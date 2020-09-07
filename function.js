@@ -1,14 +1,8 @@
 let dice = [0, 0, 0, 0, 0];
 let throws = 0;
-roll();
+dice = [2,2,3,1,4];
 console.log(dice);
-console.log(frequency());
-console.log(onePair());
-
-roll();
-console.log(dice);
-console.log(frequency());
-console.log(sameValuePoints(4));
+console.log(twoPairs());
 
 function roll() {
   let test = [0, 0, 0, 0, 0];
@@ -67,7 +61,26 @@ function onePair() {
   return pair;
 }
 
-function twoPairs() {}
+//Return the sum of two pairs. Returns null if one or no pair.
+function twoPairs() {
+    let frequence = frequency();
+    let pairOne = 0, pairTwo = 0;
+    for (let i = 0; i < frequence.length; i++) {
+        const element = frequence[i];
+        if(element >= 2) {
+            if(pairOne == 0) {
+                pairOne = 2 * (i+1);
+            } else {
+                pairTwo = 2 * (i+1);
+            }
+        }
+    }
+    if( pairOne != 0 && pairTwo != 0) {
+        return (pairOne+pairTwo);
+    } else return null;
+    
+}
+
 function threeSame() {}
 
 function fourSame(params) {}
