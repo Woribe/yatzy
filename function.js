@@ -1,23 +1,25 @@
-let dice = [0, 0, 0, 0, 0];
+let dice = [1, 1, 1, 2, 1];
 let throws = 0;
-dice = [2,2,4,3,4];
+dice = [2, 2, 3, 1, 4];
 console.log(dice);
 console.log(fullHouse());
 
 function roll() {
-  let test = [0, 0, 0, 0, 0];
+  let roll = [0, 0, 0, 0, 0];
 
-  for (let index = 0; index < test.length; index++) {
-    test[index] = Math.ceil(Math.random() * 6);
+  for (let index = 0; index < roll.length; index++) {
+    roll[index] = Math.ceil(Math.random() * 6);
   }
 
   Math.ceil(Math.random() * 6);
-  dice = test;
+  dice = roll;
+  throws++;
   return dice;
 }
 
 function resetThrow() {
-  return -1;
+  throws = 0;
+  return throws;
 }
 
 // Beregninger
@@ -52,39 +54,58 @@ function sameValuePoints(value) {
 }
 
 function onePair() {
-  let pair = 0;
-  for (const key in frequency()) {
-    if (frequency.inde[key] >= (key + 1) * 2) {
-      pair = frequency.inde[key];
+  let freq = frequency();
+  let sum = 0;
+  for (let i = 0; i < freq.length; i++) {
+    if (freq[i] >= 2) {
+      sum = (i + 1) * 2;
     }
   }
-  return pair;
+  return sum;
 }
 
 //Return the sum of two pairs. Returns null if one or no pair.
 function twoPairs() {
     let frequence = frequency();
-    let pairOne = 0, pairTwo = 0;
+    let pairOne = 0,
+      pairTwo = 0;
     for (let i = 0; i < frequence.length; i++) {
-        const element = frequence[i];
-        if(element >= 2) {
-            if(pairOne == 0) {
-                pairOne = 2 * (i+1);
-            } else {
-                pairTwo = 2 * (i+1);
-            }
+      const element = frequence[i];
+      if (element >= 2) {
+        if (pairOne == 0) {
+          pairOne = 2 * (i + 1);
+        } else {
+          pairTwo = 2 * (i + 1);
         }
+      }
     }
-    if( pairOne != 0 && pairTwo != 0) {
-        return (pairOne+pairTwo);
+    if (pairOne != 0 && pairTwo != 0) {
+      return pairOne + pairTwo;
     } else return null;
-    
+  }
+
+function threeSame() {
+  let freq = frequency();
+  let sum = 0;
+  for (let i = 0; i < freq.length; i++) {
+    if (freq[i] >= 3) {
+      sum = (i + 1) * 3;
+    }
+  }
+  return sum;
 }
 
-function threeSame() {}
+function fourSame() {
+    let freq = frequency();
+    let sum = 0;
+    for (let i = 0; i < freq.length; i++) {
+      if (freq[i] >= 4) {
+        sum = (i + 1) * 4;
+      }
+    }
+    return sum;
+}
 
-function fourSame(params) {}
-//Returns the value of full house
 function fullHouse(params) {
     let frequence = frequency();
     let pairOne = 0, setOfThree = 0;
@@ -102,8 +123,47 @@ function fullHouse(params) {
         return (pairOne+setOfThree);
     } else return null;
 }
-function small(params) {}
-function large(params) {}
-function chance(params) {}
-function yatzy(params) {}
+
+
+function small() {
+  let small = [1, 1, 1, 1, 1, 0];
+  let counter = 0;
+  for (let i = 0; i < small.length; i++) {
+    if (small[i] == frequency()[i]) {
+      counter++;
+      if (counter == 5) {
+        return 15;
+      }
+    } else return 0;
+  }
+}
+
+function large() {
+  let large = [0, 1, 1, 1, 1, 1];
+  let counter = 0;
+  for (let i = 0; i < large.length; i++) {
+    if (large[i] == frequency()[i]) {
+      counter++;
+      if (counter == 5) {
+        return 20;
+      }
+    } else return 0;
+  }
+}
+
+function chance() {
+  let sum = 0;
+  for (const value of dice) {
+    sum += value;
+  }
+  return sum;
+}
+function yatzy() {
+  for (let i = 0; i < frequency().length; i++) {
+    if (frequency()[i] == 5) {
+      return 50;
+    }
+  }
+  return 0;
+}
 function total(params) {}
