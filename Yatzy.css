@@ -14,29 +14,78 @@ div.grid-item {
 
 div#dice {
   display: grid;
-  grid-template-columns: 40px auto auto auto auto auto 40px;
-  grid-template-rows:  40px auto auto auto ;
+  grid-template-columns: 40pt auto auto auto 40pt;
+  grid-template-rows:  40pt auto 40pt auto 40pt ;
   background-color: #2196F3;
-  padding: 10px;
 }
 
-div#dice1 {
+div#diceArea {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 5;
+
+  display: grid;
+  grid-template-columns: 5pt auto auto auto auto auto 5pt;
+  grid-template-rows:  auto;
+  background-color: burlywood;
+}
+
+.dice{
+  font-size: 50pt;
+  text-align: center;
+}
+
+#turnIndicator {
+  text-align: start;
+  top: 50%;
+  
+}
+
+#dice1 {
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 3;
+
 }
 
-div#dice2 {
+#dice2 {
   grid-column-start: 3;
   grid-column-end: 4;
   grid-row-start: 2;
   grid-row-end: 3;
 }
 
-div#dice3 {
+#dice3 {
   grid-column-start: 4;
   grid-column-end: 5;
   grid-row-start: 2;
   grid-row-end: 3;
+}
+#dice4 {
+  grid-column-start: 5;
+  grid-column-end: 6;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+#dice5 {
+  grid-column-start: 6;
+  grid-column-end: 7;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+#turnIndicator {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+
+#rollButton {
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 3;
+  grid-row-end: 4;
 }
