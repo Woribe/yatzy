@@ -1,32 +1,46 @@
 div#game {
   display: grid;
   grid-row-gap: 1px;
-  grid-template-columns: auto auto auto auto;
-  padding: 10px;
-}
-
-div.grid-itemA {
+  grid-template-columns: Auto Auto;
   padding: 10px;
   font-size: 25px;
   text-align: left;
-  grid-column-start: 1;
-  grid-column-end: span col4-start;
-  grid-row-end: span 2;
-}
-div.grid-itemB {
-  padding: 10px;
-  font-size: 25px;
-  text-align: left;
-  grid-column-start: 1;
-  grid-column-end: span col4-start;
-  grid-row-end: span 2;
+  grid-auto-flow: row;
+  background-color: burlywood;
 }
 
+div#result {
+  display: grid;
+  grid-row-gap: 1px;
+  grid-template-columns: 120px 120px;
+  padding: 10px;
+
+  color: #2196f3;
+  font-size: 25px;
+  text-align: left;
+  grid-auto-flow: row;
+}
+div#diverse {
+  display: grid;
+  grid-row-gap: 1px;
+  grid-template-columns: auto;
+
+  padding: 10px;
+  color: #2196f3;
+  font-size: 25px;
+  text-align: left;
+}
+div.bonus {
+  grid-row-start: 2;
+}
+/*
+Dice
+*/
 div#dice {
   display: grid;
   grid-template-columns: 40px auto auto auto auto auto 40px;
-  grid-template-rows:  40px auto auto auto ;
-  background-color: #2196F3;
+  grid-template-rows: 40px auto auto auto;
+  background-color: #2196f3;
   padding: 10px;
 }
 
