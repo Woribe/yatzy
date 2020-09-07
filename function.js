@@ -5,6 +5,11 @@ console.log(dice);
 console.log(frequency());
 console.log(onePair());
 
+roll();
+console.log(dice);
+console.log(frequency());
+console.log(sameValuePoints(4));
+
 function roll() {
   let test = [0, 0, 0, 0, 0];
 
@@ -45,8 +50,15 @@ function frequency() {
   return numbers;
 }
 
-function sameValuePoints(value) {}
 
+// Caluculate the value of specific number in the diceset.
+function sameValuePoints(value) {
+    let frequence = frequency();
+    let valueOfNumber = frequence[value-1] * value;
+    return valueOfNumber;
+}
+
+<<<<<<< HEAD
 function onePair() {
     let pair = 0;
 for (const key in frequency()) {
@@ -64,6 +76,12 @@ return pair;
 }
 
 function twoPairs() {}
+=======
+function onePair() {}
+function twoPairs() {
+    
+}
+>>>>>>> 20c5c25a416396e1bbb8cd5c6c3c46f64e1ecda0
 function threeSame() {}
 
 function fourSame(params) {}
