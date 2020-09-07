@@ -1,8 +1,8 @@
 let dice = [1, 1, 1, 2, 1];
 let throws = 0;
-console.log("dice" + dice);
-console.log("freq" + frequency());
-console.log(yatzy());
+dice = [2, 2, 3, 1, 4];
+console.log(dice);
+console.log(twoPairs());
 
 function roll() {
   let roll = [0, 0, 0, 0, 0];
@@ -64,7 +64,6 @@ function onePair() {
   return sum;
 }
 
-function twoPairs() {}
 function threeSame() {
   let freq = frequency();
   let sum = 0;
@@ -74,6 +73,25 @@ function threeSame() {
     }
   }
   return sum;
+}
+//Return the sum of two pairs. Returns null if one or no pair.
+function twoPairs() {
+  let frequence = frequency();
+  let pairOne = 0,
+    pairTwo = 0;
+  for (let i = 0; i < frequence.length; i++) {
+    const element = frequence[i];
+    if (element >= 2) {
+      if (pairOne == 0) {
+        pairOne = 2 * (i + 1);
+      } else {
+        pairTwo = 2 * (i + 1);
+      }
+    }
+  }
+  if (pairOne != 0 && pairTwo != 0) {
+    return pairOne + pairTwo;
+  } else return null;
 }
 
 function fourSame() {
