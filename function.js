@@ -96,7 +96,7 @@ function frequency() {
       console.log("Diceset contained a number out of bound");
     }
   }
-  return numbers.number;
+  return numbers;
 }
 
 // Caluculate the value of specific number in the diceset.
