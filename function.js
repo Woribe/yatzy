@@ -12,6 +12,7 @@ let throws = 0;
 let terningFelt = document.querySelectorAll(".dice");
 let rollButton = document.querySelector("#rollButton");
 let throwFelt = document.querySelector("#turnIndicator");
+let resultFelt = document.querySelectorAll(".resultArea");
 
 // Roll call button
 rollButton.onclick = function () {
@@ -23,15 +24,18 @@ for (const value of terningFelt) {
   value.addEventListener("click", hold);
 }
 
-for (const area of resultAreas) {
+for (const area of resultFelt) {
   area.addEventListener("click", choose);
 }
 
 function choose(e) {
   console.log(e.currentTarget);
   for (const area of resultAreas) {
-    if(e.currentTarget == area) {
-      area.style.color = 'red';
+    if (e.currentTarget == area) {
+      area.style.color = "red";
+      applyValueToResult(area.id);
+
+      resetThrow();
     }
   }
 }
@@ -90,6 +94,14 @@ function setThrowCount() {
 }
 
 function resetThrow() {
+  dice = [
+    { number: 0, hold: false },
+    { number: 0, hold: false },
+    { number: 0, hold: false },
+    { number: 0, hold: false },
+    { number: 0, hold: false },
+  ];
+  setTerningFelter();
+
   throws = 0;
 }
-
