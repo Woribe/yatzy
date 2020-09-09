@@ -1,8 +1,14 @@
-let dice = [1, 1, 1, 2, 1];
+// terning
+let dice = [1, 1, 1, 1, 1];
+let holdDice = [false, false, false, false, false];
 let throws = 0;
-dice = [2, 2, 3, 1, 4];
-console.log(dice);
-console.log(fullHouse());
+// elementer
+let terningFelt = document.querySelectorAll(".dice");
+let rollButton = document.querySelector("#rollButton");
+let one = document.querySelector("#total");
+
+// Roll call button
+rollButton.onclick = roll();
 
 function roll() {
   let roll = [0, 0, 0, 0, 0];
@@ -14,8 +20,20 @@ function roll() {
   Math.ceil(Math.random() * 6);
   dice = roll;
   throws++;
+
+  setTerningFelter();
+
   return dice;
 }
+// set terning felter
+function setTerningFelter() {
+  for (let i = 0; i < terningFelt.length; i++) {
+    const element = terningFelt[i];
+    element.innerHTML = dice[i];
+  }
+}
+// set Throw count felt
+function setThrowCount() {}
 
 function resetThrow() {
   throws = 0;
@@ -66,23 +84,23 @@ function onePair() {
 
 //Return the sum of two pairs. Returns null if one or no pair.
 function twoPairs() {
-    let frequence = frequency();
-    let pairOne = 0,
-      pairTwo = 0;
-    for (let i = 0; i < frequence.length; i++) {
-      const element = frequence[i];
-      if (element >= 2) {
-        if (pairOne == 0) {
-          pairOne = 2 * (i + 1);
-        } else {
-          pairTwo = 2 * (i + 1);
-        }
+  let frequence = frequency();
+  let pairOne = 0,
+    pairTwo = 0;
+  for (let i = 0; i < frequence.length; i++) {
+    const element = frequence[i];
+    if (element >= 2) {
+      if (pairOne == 0) {
+        pairOne = 2 * (i + 1);
+      } else {
+        pairTwo = 2 * (i + 1);
       }
     }
-    if (pairOne != 0 && pairTwo != 0) {
-      return pairOne + pairTwo;
-    } else return null;
   }
+  if (pairOne != 0 && pairTwo != 0) {
+    return pairOne + pairTwo;
+  } else return null;
+}
 
 function threeSame() {
   let freq = frequency();
@@ -96,34 +114,35 @@ function threeSame() {
 }
 
 function fourSame() {
-    let freq = frequency();
-    let sum = 0;
-    for (let i = 0; i < freq.length; i++) {
-      if (freq[i] >= 4) {
-        sum = (i + 1) * 4;
+  let freq = frequency();
+  let sum = 0;
+  for (let i = 0; i < freq.length; i++) {
+    if (freq[i] >= 4) {
+      sum = (i + 1) * 4;
+    }
+  }
+  return sum;
+}
+
+function fullHouse() {
+  let frequence = frequency();
+  let pairOne = 0,
+    setOfThree = 0;
+  for (let i = 0; i < frequence.length; i++) {
+    const element = frequence[i];
+    if (element == 2) {
+      if (pairOne == 0) {
+        pairOne = 2 * (i + 1);
       }
     }
-    return sum;
-}
-
-function fullHouse(params) {
-    let frequence = frequency();
-    let pairOne = 0, setOfThree = 0;
-    for (let i = 0; i < frequence.length; i++) {
-        const element = frequence[i];
-        if(element == 2) {
-            if(pairOne == 0) {
-                pairOne = 2 * (i+1);
-            }
-        } if (element == 3) {
-            setOfThree = 3 * (i+1);
-        }
+    if (element == 3) {
+      setOfThree = 3 * (i + 1);
     }
-    if( pairOne != 0 && setOfThree != 0) {
-        return (pairOne+setOfThree);
-    } else return null;
+  }
+  if (pairOne != 0 && setOfThree != 0) {
+    return pairOne + setOfThree;
+  } else return null;
 }
-
 
 function small() {
   let small = [1, 1, 1, 1, 1, 0];
@@ -166,4 +185,4 @@ function yatzy() {
   }
   return 0;
 }
-function total(params) {}
+function total() {}
