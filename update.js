@@ -4,9 +4,9 @@ let sum = 0,
   totalScore = 0;
 
 let results = [
-  { Name: "1s", tempResult: 0, result: 0 },
-  { Name: "2s", tempResult: 0, result: 0 },
-  { Name: "3s", tempResult: 0, result: 0 },
+  { Name: "1s", tempResult: 0, result: undefined },
+  { Name: "2s", tempResult: 0, result: undefined },
+  { Name: "3s", tempResult: 0, result: undefined },
   { Name: "4s", tempResult: 0, result: 0 },
   { Name: "5s", tempResult: 0, result: 0 },
   { Name: "6s", tempResult: 0, result: 0 },
@@ -53,7 +53,9 @@ function updateAllResultAreas() {
 function applyValueToResult(name) {
   for (const result of results) {
     if (result.Name == name) {
-      result.result = result.tempResult;
+        if(result.result == 0) {
+            result.result = result.tempResult;
+        }
     }
   }
   updateAllResultAreas();
