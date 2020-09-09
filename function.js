@@ -23,19 +23,23 @@ rollButton.onclick = function () {
 for (const value of terningFelt) {
   value.addEventListener("click", hold);
 }
-
+// Vælg et resultat
 for (const area of resultFelt) {
   area.addEventListener("click", choose);
 }
-
+// vælger et felt og resetter terninger
 function choose(e) {
   console.log(e.currentTarget);
   for (const area of resultAreas) {
     if (e.currentTarget == area) {
-      area.style.color = "red";
-      applyValueToResult(area.id);
-
-      resetThrow();
+      for (let i = 0; i < results.length; i++) {
+        const element = results[i];
+        if (element.result == 0 && element.Name == area.id) {
+          area.style.color = "red";
+          applyValueToResult(area.id);
+          resetThrow();
+        }
+      }
     }
   }
 }
