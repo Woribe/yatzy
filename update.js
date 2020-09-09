@@ -4,21 +4,21 @@ let sum = 0,
   totalScore = 0;
 
 let results = [
-  { Name: "1s", tempResult: 0, result: undefined },
-  { Name: "2s", tempResult: 0, result: undefined },
-  { Name: "3s", tempResult: 0, result: undefined },
-  { Name: "4s", tempResult: 0, result: 0 },
-  { Name: "5s", tempResult: 0, result: 0 },
-  { Name: "6s", tempResult: 0, result: 0 },
-  { Name: "pair", tempResult: 0, result: 0 },
-  { Name: "twoPairs", tempResult: 0, result: 0 },
-  { Name: "threeSame", tempResult: 0, result: 0 },
-  { Name: "fourSame", tempResult: 0, result: 0 },
-  { Name: "fullHouse", tempResult: 0, result: 0 },
-  { Name: "small", tempResult: 0, result: 0 },
-  { Name: "large", tempResult: 0, result: 0 },
-  { Name: "chance", tempResult: 0, result: 0 },
-  { Name: "yatzy", tempResult: 0, result: 0 },
+  { Name: "1s", tempResult: 0, result: 0, blocked: false },
+  { Name: "2s", tempResult: 0, result: 0, blocked: false },
+  { Name: "3s", tempResult: 0, result: 0, blocked: false },
+  { Name: "4s", tempResult: 0, result: 0, blocked: false },
+  { Name: "5s", tempResult: 0, result: 0, blocked: false },
+  { Name: "6s", tempResult: 0, result: 0, blocked: false },
+  { Name: "pair", tempResult: 0, result: 0, blocked: false },
+  { Name: "twoPairs", tempResult: 0, result: 0, blocked: false },
+  { Name: "threeSame", tempResult: 0, result: 0, blocked: false },
+  { Name: "fourSame", tempResult: 0, result: 0, blocked: false },
+  { Name: "fullHouse", tempResult: 0, result: 0, blocked: false },
+  { Name: "small", tempResult: 0, result: 0, blocked: false },
+  { Name: "large", tempResult: 0, result: 0, blocked: false },
+  { Name: "chance", tempResult: 0, result: 0, blocked: false },
+  { Name: "yatzy", tempResult: 0, result: 0, blocked: false },
 ];
 
 let sumNode = document.querySelector("#sum");
@@ -53,8 +53,11 @@ function updateAllResultAreas() {
 function applyValueToResult(name) {
   for (const result of results) {
     if (result.Name == name) {
-        if(result.result == 0) {
+        if(result.result == 0 && result.blocked == false) {
             result.result = result.tempResult;
+            result.blocked = true;
+        } else if(result.blocked == false) {
+            console.log("Area is blocked");
         }
     }
   }
