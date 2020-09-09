@@ -37,6 +37,7 @@ function updateAllResultAreas() {
       //resultArea.setAttribute("placeholder:" + result.tempResult);
     } else if (result.result != 0) {
       resultArea.value = result.result;
+      result.result = result.tempResult;
     }
   }
 
