@@ -53,12 +53,12 @@ function updateAllResultAreas() {
 function applyValueToResult(name) {
   for (const result of results) {
     if (result.Name == name) {
-        if(result.result == 0 && result.blocked == false) {
-            result.result = result.tempResult;
-            result.blocked = true;
-        } else if(result.blocked == false) {
-            console.log("Area is blocked");
-        }
+      if (result.result == 0 && result.blocked == false) {
+        result.result = result.tempResult;
+        result.blocked = true;
+      } else if (result.blocked == false) {
+        console.log("Area is blocked");
+      }
     }
   }
   updateAllResultAreas();
