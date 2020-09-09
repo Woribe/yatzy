@@ -32,10 +32,10 @@ function updateAllResultAreas() {
   for (let i = 0; i < resultAreas.length; i++) {
     const resultArea = resultAreas[i];
     const result = results[i];
-    if (result.result == 0) {
+    if (result.result == 0 && result.blocked == false) {
       resultArea.value = result.tempResult;
       //resultArea.setAttribute("placeholder:" + result.tempResult);
-    } else if (result.result != 0) {
+    } else if (result.result != 0 && result.blocked == false) {
       resultArea.value = result.result;
       result.result = result.tempResult;
     }
