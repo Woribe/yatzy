@@ -79,12 +79,13 @@ function updateSum() {
 
 //Updates the totalScore
 function updateTotal() {
+    totalScore = 0;
     for (let i = 5; i < results.length; i++) {
         const result = results[i];
         totalScore += result.result;
     }
+    totalScore += bonus;
     totalScore += sum;
-    totalScore += bonus
 }
 
 
