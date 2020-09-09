@@ -81,10 +81,11 @@ function updateAllTempReults() {
 
 //Counts the sum - must be 63 for bonus
 function updateSum() {
-  for (let i = 0; i < 5; i++) {
-    sum += results[i].result;
-    if (sum <= 63) {
-      bonus = 50;
+    for (let i = 0; i < 5; i++) {
+        sum += results[i].result;
+        if(sum >= 63) {
+            bonus = 50;
+        }
     }
   }
 }
