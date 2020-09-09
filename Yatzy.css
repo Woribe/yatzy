@@ -46,8 +46,9 @@ div#total {
   grid-column-start: 2;
 }
 
+
 /*
-Dice
+The top DICE-area
 */
 div#dice {
   display: grid;
