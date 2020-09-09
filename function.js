@@ -1,18 +1,17 @@
 // terning
 let dice = [
-  { number: 1, hold: false },
-  { number: 1, hold: false },
-  { number: 1, hold: false },
-  { number: 1, hold: false },
-  { number: 1, hold: false },
+  { number: 0, hold: false },
+  { number: 0, hold: false },
+  { number: 0, hold: false },
+  { number: 0, hold: false },
+  { number: 0, hold: false },
 ];
 let throws = 0;
 // elementer
+
 let terningFelt = document.querySelectorAll(".dice");
 let rollButton = document.querySelector("#rollButton");
-
-let one = document.querySelector("#total");
-
+let throwFelt = document.querySelector("#turnIndicator");
 // Roll call button
 rollButton.onclick = function () {
   roll();
@@ -24,27 +23,36 @@ for (const value of terningFelt) {
 //hold event function
 function hold(e) {
   for (let i = 0; i < dice.length; i++) {
-    if (e.currentTarget == document.querySelector("#dice" + i)) {
-      if (dice[i - 1].hold == true) {
-        dice[i - 1].hold = false;
-      } else dice[i - 1].hold = true;
+    let holdUp = document.querySelector("#dice" + (i + 1));
+    if (e.currentTarget == holdUp) {
+      if (dice[i].hold == true) {
+        dice[i].hold = false;
+        holdUp.style.color = "black";
+      } else {
+        dice[i].hold = true;
+        holdUp.style.color = "purple";
+      }
     }
   }
 }
 // kaster terningerne
 function roll() {
-  for (let index = 0; index < dice.length; index++) {
-    // Hold
-    if (dice[index].hold == false) {
-      //Random slag
-      dice[index].number = Math.ceil(Math.random() * 6);
-    }
-  }
-  Math.ceil(Math.random() * 6);
-  throws++;
+  if (throws < 3) {
+    for (let index = 0; index < dice.length; index++) {
+      // giver spilleren op til 3 slag
 
-  setTerningFelter();
-  console.log("Test");
+      // Hold
+      if (dice[index].hold == false) {
+        //Random slag
+        dice[index].number = Math.ceil(Math.random() * 6);
+      }
+    }
+    Math.ceil(Math.random() * 6);
+    throws++;
+
+    setThrowCount();
+    setTerningFelter();
+  }
 }
 // update terning img
 function updateTerningIMG() {}
@@ -57,11 +65,12 @@ function setTerningFelter() {
   }
 }
 // set Throw count felt
-function setThrowCount() {}
+function setThrowCount() {
+  throwFelt.innerHTML = "Antal Kast: " + throws;
+}
 
 function resetThrow() {
   throws = 0;
-  return throws;
 }
 
 // Beregninger
@@ -69,23 +78,23 @@ function resetThrow() {
 function frequency() {
   let numbers = [0, 0, 0, 0, 0, 0];
   for (const number of dice) {
-    if (number == 1) {
-      numbers[0]++;
-    } else if (number == 2) {
-      numbers[1]++;
-    } else if (number == 3) {
-      numbers[2]++;
-    } else if (number == 4) {
-      numbers[3]++;
-    } else if (number == 5) {
-      numbers[4]++;
-    } else if (number == 6) {
-      numbers[5]++;
+    if (number.number == 1) {
+      numbers[0].number++;
+    } else if (number.number == 2) {
+      numbers[1].number++;
+    } else if (number.number == 3) {
+      numbers[2].number++;
+    } else if (number.number == 4) {
+      numbers[3].number++;
+    } else if (number.number == 5) {
+      numbers[4].number++;
+    } else if (number.number == 6) {
+      numbers[5].number++;
     } else {
       console.log("Diceset contained a number out of bound");
     }
   }
-  return numbers;
+  return numbers.number;
 }
 
 // Caluculate the value of specific number in the diceset.
@@ -197,7 +206,7 @@ function large() {
 function chance() {
   let sum = 0;
   for (const value of dice) {
-    sum += value;
+    sum += value.number;
   }
   return sum;
 }
