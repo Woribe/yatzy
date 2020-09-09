@@ -42,6 +42,7 @@ function updateAllResultAreas() {
   //Updates sum & totalScore and then apply the content to the GUI
   updateSum();
   updateTotal();
+  afslutSpil();
 }
 
 //Updates the the value of a specifik result
@@ -111,10 +112,12 @@ function afslutSpil() {
     const element = results[i];
     if (element.blocked == true) {
       check++;
+      console.log(check);
     }
   }
   if (check == 15) {
-    alert("Spiller er slut");
+    console.log("Total score er: " + totalScore);
+    alert("Spiller er slut, " + "din total score er: " + totalScore);
     results = [
       { Name: "1s", tempResult: 0, result: 0, blocked: false },
       { Name: "2s", tempResult: 0, result: 0, blocked: false },
