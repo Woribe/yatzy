@@ -29,7 +29,8 @@ for (const area of resultFelt) {
 }
 // vælger et felt og resetter terninger
 function choose(e) {
-  console.log(e.currentTarget);
+  if(throws != 0) {
+    console.log(e.currentTarget);
   for (const area of resultAreas) {
     if (e.currentTarget == area) {
       for (let i = 0; i < results.length; i++) {
@@ -42,22 +43,29 @@ function choose(e) {
       }
     }
   }
+  resetTemps();
+  updateAllResultAreas();
+  }
+  
 }
 
 //hold event function
 function hold(e) {
-  for (let i = 0; i < dice.length; i++) {
-    let holdUp = document.querySelector("#dice" + (i + 1));
-    if (e.currentTarget == holdUp) {
-      if (dice[i].hold == true) {
-        dice[i].hold = false;
-        holdUp.style.color = "black";
-      } else {
-        dice[i].hold = true;
-        holdUp.style.color = "purple";
+  if(throws != 0) {
+    for (let i = 0; i < dice.length; i++) {
+      let holdUp = document.querySelector("#dice" + (i + 1));
+      if (e.currentTarget == holdUp) {
+        if (dice[i].hold == true) {
+          dice[i].hold = false;
+          holdUp.style.color = "black";
+        } else {
+          dice[i].hold = true;
+          holdUp.style.color = "purple";
+        }
       }
     }
   }
+  
 }
 
 // kaster terningerne
@@ -113,6 +121,10 @@ function resetThrow() {
     { number: 6, hold: false },
   ];
   setTerningFelter();
+
+  for (const terning of terningFelt) {
+    terning.style.color = 'BLACK';
+  }
 
   throws = 0;
 }

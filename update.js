@@ -109,6 +109,14 @@ function updateTotal() {
   totalNode.value = totalScore;
 }
 
+
+function resetTemps() {
+    for (const result of results) {
+        result.tempResult = 0;
+    }
+    
+}
+
 function afslutSpil() {
   let check = 0;
   for (let i = 0; i < results.length; i++) {
