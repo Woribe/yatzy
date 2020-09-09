@@ -82,7 +82,14 @@ function roll() {
   }
 }
 // update terning img
-let terningBillede = ["&#9856", "&#9857","&#9858", "&#9859", "&#9860", "&#9861"];
+let terningBillede = [
+  "&#9856",
+  "&#9857",
+  "&#9858",
+  "&#9859",
+  "&#9860",
+  "&#9861",
+];
 
 // set terning felter
 function setTerningFelter() {
@@ -99,11 +106,11 @@ function setThrowCount() {
 
 function resetThrow() {
   dice = [
-    { number: 0, hold: false },
-    { number: 0, hold: false },
-    { number: 0, hold: false },
-    { number: 0, hold: false },
-    { number: 0, hold: false },
+    { number: 6, hold: false },
+    { number: 6, hold: false },
+    { number: 6, hold: false },
+    { number: 6, hold: false },
+    { number: 6, hold: false },
   ];
   setTerningFelter();
 

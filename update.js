@@ -141,11 +141,11 @@ function afslutSpil() {
     (sum = 0), (bonus = 0), (totalScore = 0);
 
     dice = [
-      { number: 0, hold: false },
-      { number: 0, hold: false },
-      { number: 0, hold: false },
-      { number: 0, hold: false },
-      { number: 0, hold: false },
+      { number: 6, hold: false },
+      { number: 6, hold: false },
+      { number: 6, hold: false },
+      { number: 6, hold: false },
+      { number: 6, hold: false },
     ];
     throws = 0;
   }
