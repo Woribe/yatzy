@@ -1,36 +1,50 @@
 // terning
-let dice = [1, 1, 1, 1, 1];
-let holdDice = [false, false, false, false, false];
+let dice = [
+  { number: 1, hold: false },
+  { number: 1, hold: false },
+  { number: 1, hold: false },
+  { number: 1, hold: false },
+  { number: 1, hold: false },
+];
 let throws = 0;
 // elementer
 let terningFelt = document.querySelectorAll(".dice");
 let rollButton = document.querySelector("#rollButton");
+
 let one = document.querySelector("#total");
 
 // Roll call button
 rollButton.onclick = function () {
   roll();
 };
-
-terningFelt.addEventListener("click", roll());
-
+// hold event
+for (const value of terningFelt) {
+  value.addEventListener("click", hold);
+}
+//hold event function
+function hold(e) {
+  for (let i = 0; i < dice.length; i++) {
+    if (e.currentTarget == document.querySelector("#dice" + i)) {
+      if (dice[i - 1].hold == true) {
+        dice[i - 1].hold = false;
+      } else dice[i - 1].hold = true;
+    }
+  }
+}
+// kaster terningerne
 function roll() {
-  let roll = dice;
-
-  for (let index = 0; index < roll.length; index++) {
+  for (let index = 0; index < dice.length; index++) {
     // Hold
-    if (holdDice[index] == false) {
+    if (dice[index].hold == false) {
       //Random slag
-      roll[index] = Math.ceil(Math.random() * 6);
+      dice[index].number = Math.ceil(Math.random() * 6);
     }
   }
   Math.ceil(Math.random() * 6);
-  dice = roll;
   throws++;
 
   setTerningFelter();
-
-  return dice;
+  console.log("Test");
 }
 // update terning img
 function updateTerningIMG() {}
@@ -38,7 +52,8 @@ function updateTerningIMG() {}
 function setTerningFelter() {
   for (let i = 0; i < terningFelt.length; i++) {
     const element = terningFelt[i];
-    element.innerHTML = dice[i];
+
+    element.innerHTML = dice[i].number;
   }
 }
 // set Throw count felt
