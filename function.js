@@ -12,13 +12,18 @@ rollButton.onclick = function () {
   roll();
 };
 
+terningFelt.addEventListener("click", roll());
+
 function roll() {
-  let roll = [0, 0, 0, 0, 0];
+  let roll = dice;
 
   for (let index = 0; index < roll.length; index++) {
-    roll[index] = Math.ceil(Math.random() * 6);
+    // Hold
+    if (holdDice[index] == false) {
+      //Random slag
+      roll[index] = Math.ceil(Math.random() * 6);
+    }
   }
-
   Math.ceil(Math.random() * 6);
   dice = roll;
   throws++;
@@ -27,6 +32,8 @@ function roll() {
 
   return dice;
 }
+// update terning img
+function updateTerningIMG() {}
 // set terning felter
 function setTerningFelter() {
   for (let i = 0; i < terningFelt.length; i++) {
