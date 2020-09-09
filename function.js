@@ -23,6 +23,19 @@ for (const value of terningFelt) {
   value.addEventListener("click", hold);
 }
 
+for (const area of resultAreas) {
+  area.addEventListener("click", choose);
+}
+
+function choose(e) {
+  console.log(e.currentTarget);
+  for (const area of resultAreas) {
+    if(e.currentTarget == area) {
+      area.style.color = 'red';
+    }
+  }
+}
+
 //hold event function
 function hold(e) {
   for (let i = 0; i < dice.length; i++) {
