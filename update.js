@@ -60,7 +60,8 @@ function applyValueToResult(name) {
   updateAllResultAreas();
 }
 
-//Updates all tempResults and then updates the interface
+//Updates all tempResults and then updates the interface.
+//Being runned every time we "roll"
 function updateAllTempReults() {
   results[0].tempResult = sameValuePoints(1);
   results[1].tempResult = sameValuePoints(2);
@@ -82,6 +83,7 @@ function updateAllTempReults() {
 }
 
 //Counts the sum - must be 63 for bonus
+//Being runned by updateAllResultAreas()
 function updateSum() {
     sum = 0;
   for (let i = 0; i < 5; i++) {
@@ -95,6 +97,7 @@ function updateSum() {
 }
 
 //Updates the totalScore
+//Being runned by updateAllResultAreas()
 function updateTotal() {
   totalScore = 0;
   for (let i = 5; i < results.length; i++) {

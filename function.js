@@ -82,13 +82,13 @@ function roll() {
   }
 }
 // update terning img
-function updateTerningIMG() {}
+let terningBillede = ["&#9856", "&#9857","&#9858", "&#9859", "&#9860", "&#9861"];
+
 // set terning felter
 function setTerningFelter() {
   for (let i = 0; i < terningFelt.length; i++) {
     const element = terningFelt[i];
-
-    element.innerHTML = dice[i].number;
+    element.innerHTML = terningBillede[dice[i].number - 1];
   }
 }
 
