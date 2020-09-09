@@ -16,7 +16,7 @@ let throwFelt = document.querySelector("#turnIndicator");
 rollButton.onclick = function () {
   roll();
 };
-// hold event
+// hold event for terning
 for (const value of terningFelt) {
   value.addEventListener("click", hold);
 }
@@ -37,8 +37,8 @@ function hold(e) {
 }
 // kaster terningerne
 function roll() {
-  //Throws er på 30 for test
-  if (throws < 30) {
+  //Throws er på 3
+  if (throws < 3) {
     for (let index = 0; index < dice.length; index++) {
       // giver spilleren op til 3 slag
 
@@ -134,7 +134,7 @@ function twoPairs() {
   }
   if (pairOne != 0 && pairTwo != 0) {
     return pairOne + pairTwo;
-  } else return null;
+  } else return 0;
 }
 
 function threeSame() {
@@ -176,7 +176,7 @@ function fullHouse() {
   }
   if (pairOne != 0 && setOfThree != 0) {
     return pairOne + setOfThree;
-  } else return null;
+  } else return 0;
 }
 
 function small() {

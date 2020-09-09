@@ -15,7 +15,7 @@ div#game {
 div#result {
   display: grid;
   grid-row-gap: 1px;
-  grid-template-columns: 120px 120px;
+  grid-template-columns: 100px 100px;
   padding: 10px;
 
   color: #2196f3;
@@ -45,7 +45,6 @@ div#total {
   grid-row-start: 4;
   grid-column-start: 2;
 }
-
 
 /*
 The top DICE-area
