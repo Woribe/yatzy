@@ -9,7 +9,7 @@ let one = document.querySelector("#total");
 
 // Roll call button
 rollButton.onclick = function () {
-  roll;
+  roll();
 };
 
 function roll() {
