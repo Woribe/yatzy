@@ -47,6 +47,7 @@ function updateAllResultAreas() {
   sumNode.value = sum;
   bonusNode.value = bonus;
   totalNode.value = totalScore;
+  afslutSpil();
 }
 
 //Updates the the value of a specifik result
@@ -104,4 +105,44 @@ function updateTotal() {
   }
   totalScore += bonus;
   totalScore += sum;
+}
+
+function afslutSpil() {
+  let check = 0;
+  for (let i = 0; i < results.length; i++) {
+    const element = results[i];
+    if (element.blocked == true) {
+      check++;
+    }
+  }
+  if (check == 15) {
+    alert("Spiller er slut");
+    results = [
+      { Name: "1s", tempResult: 0, result: 0, blocked: false },
+      { Name: "2s", tempResult: 0, result: 0, blocked: false },
+      { Name: "3s", tempResult: 0, result: 0, blocked: false },
+      { Name: "4s", tempResult: 0, result: 0, blocked: false },
+      { Name: "5s", tempResult: 0, result: 0, blocked: false },
+      { Name: "6s", tempResult: 0, result: 0, blocked: false },
+      { Name: "pair", tempResult: 0, result: 0, blocked: false },
+      { Name: "twoPairs", tempResult: 0, result: 0, blocked: false },
+      { Name: "threeSame", tempResult: 0, result: 0, blocked: false },
+      { Name: "fourSame", tempResult: 0, result: 0, blocked: false },
+      { Name: "fullHouse", tempResult: 0, result: 0, blocked: false },
+      { Name: "small", tempResult: 0, result: 0, blocked: false },
+      { Name: "large", tempResult: 0, result: 0, blocked: false },
+      { Name: "chance", tempResult: 0, result: 0, blocked: false },
+      { Name: "yatzy", tempResult: 0, result: 0, blocked: false },
+    ];
+    (sum = 0), (bonus = 0), (totalScore = 0);
+
+    dice = [
+      { number: 0, hold: false },
+      { number: 0, hold: false },
+      { number: 0, hold: false },
+      { number: 0, hold: false },
+      { number: 0, hold: false },
+    ];
+    throws = 0;
+  }
 }
