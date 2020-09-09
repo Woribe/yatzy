@@ -70,7 +70,7 @@ function updateAllTempReults() {
 function updateSum() {
     for (let i = 0; i < 5; i++) {
         sum += results[i].result;
-        if(sum <= 63) {
+        if(sum >= 63) {
             bonus = 50;
         }
     }
