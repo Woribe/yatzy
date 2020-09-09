@@ -34,15 +34,15 @@ function updateAllResultAreas() {
       resultArea.value = result.tempResult;
       //resultArea.setAttribute("placeholder:" + result.tempResult);
     } else if (result.result != 0 && result.blocked == false) {
-        
-        resultArea.value = result.result;
-        console.log(result.name + " er sat til " + result.result)
+      resultArea.value = result.result;
+      console.log(result.name + " er sat til " + result.result);
     }
   }
 
   //Updates sum & totalScore and then apply the content to the GUI
   updateSum();
   updateTotal();
+  afslutSpil();
 }
 
 //Updates the the value of a specifik result
@@ -85,7 +85,7 @@ function updateAllTempReults() {
 //Counts the sum - must be 63 for bonus
 //Being runned by updateAllResultAreas()
 function updateSum() {
-    sum = 0;
+  sum = 0;
   for (let i = 0; i < 5; i++) {
     sum += results[i].result;
     if (sum >= 63) {
@@ -107,4 +107,46 @@ function updateTotal() {
   totalScore += bonus;
   totalScore += sum;
   totalNode.value = totalScore;
+}
+
+function afslutSpil() {
+  let check = 0;
+  for (let i = 0; i < results.length; i++) {
+    const element = results[i];
+    if (element.blocked == true) {
+      check++;
+      console.log(check);
+    }
+  }
+  if (check == 15) {
+    console.log("Total score er: " + totalScore);
+    alert("Spiller er slut, " + "din total score er: " + totalScore);
+    results = [
+      { Name: "1s", tempResult: 0, result: 0, blocked: false },
+      { Name: "2s", tempResult: 0, result: 0, blocked: false },
+      { Name: "3s", tempResult: 0, result: 0, blocked: false },
+      { Name: "4s", tempResult: 0, result: 0, blocked: false },
+      { Name: "5s", tempResult: 0, result: 0, blocked: false },
+      { Name: "6s", tempResult: 0, result: 0, blocked: false },
+      { Name: "pair", tempResult: 0, result: 0, blocked: false },
+      { Name: "twoPairs", tempResult: 0, result: 0, blocked: false },
+      { Name: "threeSame", tempResult: 0, result: 0, blocked: false },
+      { Name: "fourSame", tempResult: 0, result: 0, blocked: false },
+      { Name: "fullHouse", tempResult: 0, result: 0, blocked: false },
+      { Name: "small", tempResult: 0, result: 0, blocked: false },
+      { Name: "large", tempResult: 0, result: 0, blocked: false },
+      { Name: "chance", tempResult: 0, result: 0, blocked: false },
+      { Name: "yatzy", tempResult: 0, result: 0, blocked: false },
+    ];
+    (sum = 0), (bonus = 0), (totalScore = 0);
+
+    dice = [
+      { number: 0, hold: false },
+      { number: 0, hold: false },
+      { number: 0, hold: false },
+      { number: 0, hold: false },
+      { number: 0, hold: false },
+    ];
+    throws = 0;
+  }
 }
