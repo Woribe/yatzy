@@ -36,17 +36,15 @@ function updateAllResultAreas() {
       resultArea.value = result.tempResult;
       //resultArea.setAttribute("placeholder:" + result.tempResult);
     } else if (result.result != 0 && result.blocked == false) {
-      resultArea.value = result.result;
-      result.result = result.tempResult;
+        
+        resultArea.value = result.result;
+        console.log(result.name + " er sat til " + result.result)
     }
   }
 
   //Updates sum & totalScore and then apply the content to the GUI
   updateSum();
   updateTotal();
-  sumNode.value = sum;
-  bonusNode.value = bonus;
-  totalNode.value = totalScore;
 }
 
 //Updates the the value of a specifik result
@@ -56,6 +54,7 @@ function applyValueToResult(name) {
         if(result.result == 0 && result.blocked == false) {
             result.result = result.tempResult;
             result.blocked = true;
+            console.log(result.name + "er sat til " + result.result);
         } else if(result.blocked == true) {
             console.log("Area is blocked");
         }
@@ -93,6 +92,8 @@ function updateSum() {
       bonus = 50;
     }
   }
+  sumNode.value = sum;
+  bonusNode.value = bonus;
 }
 
 //Updates the totalScore
@@ -104,4 +105,6 @@ function updateTotal() {
   }
   totalScore += bonus;
   totalScore += sum;
+
+  totalNode.value = totalScore;
 }
