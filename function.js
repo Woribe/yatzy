@@ -37,7 +37,8 @@ function hold(e) {
 }
 // kaster terningerne
 function roll() {
-  if (throws < 3) {
+  //Throws er på 30 for test
+  if (throws < 30) {
     for (let index = 0; index < dice.length; index++) {
       // giver spilleren op til 3 slag
 
@@ -52,6 +53,7 @@ function roll() {
 
     setThrowCount();
     setTerningFelter();
+    updateAllTempReults();
   }
 }
 // update terning img
