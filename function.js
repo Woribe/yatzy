@@ -8,9 +8,7 @@ let rollButton = document.querySelector("#rollButton");
 let one = document.querySelector("#total");
 
 // Roll call button
-rollButton.onclick = function () {
-  roll();
-};
+rollButton.onclick = roll();
 
 function roll() {
   let roll = [0, 0, 0, 0, 0];
