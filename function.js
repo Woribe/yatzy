@@ -34,7 +34,7 @@ function choose(e) {
     if (e.currentTarget == area) {
       for (let i = 0; i < results.length; i++) {
         const element = results[i];
-        if (element.result == 0 && element.Name == area.id) {
+        if ((element.Name = area.id && element.blocked == false)) {
           area.style.color = "red";
           applyValueToResult(area.id);
           resetThrow();
