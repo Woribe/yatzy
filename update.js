@@ -25,8 +25,6 @@ let sumNode = document.querySelector("#sum");
 let bonusNode = document.querySelector("#bonus");
 let totalNode = document.querySelector("#total");
 
-console.log(resultAreas);
-
 //Updates all resultareas with a tempResult
 function updateAllResultAreas() {
   for (let i = 0; i < resultAreas.length; i++) {
@@ -85,6 +83,7 @@ function updateAllTempReults() {
 
 //Counts the sum - must be 63 for bonus
 function updateSum() {
+    sum = 0;
   for (let i = 0; i < 5; i++) {
     sum += results[i].result;
     if (sum >= 63) {
@@ -104,6 +103,5 @@ function updateTotal() {
   }
   totalScore += bonus;
   totalScore += sum;
-
   totalNode.value = totalScore;
 }
