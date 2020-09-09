@@ -15,23 +15,24 @@ console.log(resultAreas);
 
 //Updates all resultareas with a tempResult
 function updateAllResultAreas() {
+
     for (let i = 0; i < resultAreas.length; i++) {
         const resultArea = resultAreas[i];
         const result = results[i];
         if(result.result == 0) {
-            resultArea.textContent = result.tempResult;
-            resultArea.setAttribute("placeholder:" + result.tempResult);
+            resultArea.innerHTML = result.tempResult;
+            //resultArea.setAttribute("placeholder:" + result.tempResult);
         } else if(result.result != 0) {
-            resultArea.textContent = result.result;
+            resultArea.innerHTML = result.result;
         }
     }
 
     //Updates sum & totalScore and then apply the content to the GUI
     updateSum();
     updateTotal();
-    sumNode.textContent = sum;
-    bonusNode.textContent = bonus;
-    totalNode.textContent = totalScore;
+    sumNode.innerHTML = sum;
+    bonusNode.innerHTML = bonus;
+    totalNode.innerHTML = totalScore;
 }
 
 //Updates the the value of a specifik result
