@@ -78,25 +78,25 @@ function resetThrow() {
 // Beregninger
 //frequency regner hvor mange af hver der er...
 function frequency() {
-  let numbers = [0, 0, 0, 0, 0, 0];
-  for (const number of dice) {
-    if (number.number == 1) {
-      numbers[0].number++;
-    } else if (number.number == 2) {
-      numbers[1].number++;
-    } else if (number.number == 3) {
-      numbers[2].number++;
-    } else if (number.number == 4) {
-      numbers[3].number++;
-    } else if (number.number == 5) {
-      numbers[4].number++;
-    } else if (number.number == 6) {
-      numbers[5].number++;
+  let frequence = [0, 0, 0, 0, 0, 0];
+  for (const value of dice) {
+    if (value.number == 1) {
+      frequence[0]++;
+    } else if (value.number == 2) {
+      frequence[1]++;
+    } else if (value.number == 3) {
+      frequence[2]++;
+    } else if (value.number == 4) {
+      frequence[3]++;
+    } else if (value.number == 5) {
+      frequence[4]++;
+    } else if (value.number == 6) {
+      frequence[5]++;
     } else {
       console.log("Diceset contained a number out of bound");
     }
   }
-  return numbers;
+  return frequence;
 }
 
 // Caluculate the value of specific number in the diceset.
