@@ -56,7 +56,7 @@ function applyValueToResult(name) {
       if (result.result == 0 && result.blocked == false) {
         result.result = result.tempResult;
         result.blocked = true;
-      } else if (result.blocked == false) {
+      } else if (result.blocked == true) {
         console.log("Area is blocked");
       }
     }
