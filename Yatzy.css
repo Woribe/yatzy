@@ -6,10 +6,16 @@ div#game {
   font-size: 25px;
   text-align: left;
   grid-auto-flow: row;
-  background-color: burlywood;
 
+  border-radius: 25px;
   border-collapse: collapse;
   border: 10px solid black;
+  background: rgb(63, 94, 251);
+  background: radial-gradient(
+    circle,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(252, 70, 107, 1) 100%
+  );
 }
 
 div#result {
@@ -34,16 +40,29 @@ div#diverse {
   text-align: left;
   border-collapse: collapse;
   border: 10px solid black;
+  border-radius: 25px;
 }
 div#sum {
   grid-row-start: 2;
+  color: #ffffff;
+
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
+    0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;
 }
 div#bonus {
   grid-row-start: 2;
+  color: #ffffff;
+
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
+    0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;
 }
 div#total {
   grid-row-start: 4;
   grid-column-start: 2;
+  color: #ffffff;
+
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
+    0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;
 }
 
 /*
@@ -53,10 +72,17 @@ div#dice {
   display: grid;
   grid-template-columns: 40pt auto auto auto 40pt;
   grid-template-rows: 40pt auto 40pt auto 40pt;
-  background-color: #2196f3;
+
   grid-row-gap: 5pt;
   border-collapse: collapse;
   border: 1px solid #000000;
+  border-radius: 25px;
+  background: rgb(63, 94, 251);
+  background: radial-gradient(
+    circle,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(252, 70, 107, 1) 100%
+  );
 }
 
 div#diceArea {
@@ -68,10 +94,15 @@ div#diceArea {
   display: grid;
   grid-template-columns: 5pt auto auto auto auto auto 5pt;
   grid-template-rows: auto;
-  background-color: burlywood;
 
   border-collapse: collapse;
   border: 1px solid #000000;
+  background: rgb(63, 94, 251);
+  background: radial-gradient(
+    circle,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(252, 70, 107, 1) 100%
+  );
 }
 
 .dice {
@@ -89,6 +120,10 @@ div#diceArea {
   grid-column-end: 3;
   grid-row-start: 2;
   grid-row-end: 3;
+  color: black;
+
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
+    0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;
 }
 
 #dice2 {
@@ -96,6 +131,10 @@ div#diceArea {
   grid-column-end: 4;
   grid-row-start: 2;
   grid-row-end: 3;
+  color: black;
+
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
+    0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;
 }
 
 #dice3 {
@@ -103,18 +142,30 @@ div#diceArea {
   grid-column-end: 5;
   grid-row-start: 2;
   grid-row-end: 3;
+  color: black;
+
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
+    0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;
 }
 #dice4 {
   grid-column-start: 5;
   grid-column-end: 6;
   grid-row-start: 2;
   grid-row-end: 3;
+  color: black;
+
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
+    0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;
 }
 #dice5 {
   grid-column-start: 6;
   grid-column-end: 7;
   grid-row-start: 2;
   grid-row-end: 3;
+  color: black;
+
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
+    0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;
 }
 
 #turnIndicator {
@@ -122,6 +173,10 @@ div#diceArea {
   grid-column-end: 3;
   grid-row-start: 3;
   grid-row-end: 4;
+  color: #ffffff;
+
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
+    0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;
 }
 
 #rollButton {
@@ -129,4 +184,15 @@ div#diceArea {
   grid-column-end: 5;
   grid-row-start: 3;
   grid-row-end: 4;
+  border-radius: 25px;
+  color: #ffffff;
+
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #49ff18,
+    0 0 30px #49ff18, 0 0 40px #49ff18, 0 0 55px #49ff18, 0 0 75px #49ff18;
+  background: rgb(63, 94, 251);
+  background: radial-gradient(
+    circle,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(252, 70, 107, 1) 100%
+  );
 }
